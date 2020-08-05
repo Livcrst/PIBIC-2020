@@ -4,7 +4,7 @@ import matplotlib.pyplot as plotar #para plotar meus grafos
 import seaborn as sn #Para plotar as distribuições
 import pandas as pd 
 
-dados = open ('D:\PIBIC\Coisa em Python\PIBIC-2020\protein.edgelist.txt','r') 
+dados = open ('D:\PIBIC\PIBIC-2020\Datasets\protein.edgelist.txt','r') 
 
 #Percorrendo para salvar os dados do arquivo para 
 TratarDados = []
