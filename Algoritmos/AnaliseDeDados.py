@@ -6,44 +6,46 @@ import pandas as pd
 
 dados = open ('D:\PIBIC\PIBIC-2020\Datasets\protein.edgelist.txt','r') 
 
-#Percorrendo para salvar os dados do arquivo para 
-TratarDados = []
-for i in dados:
-    dado = i.rstrip()
-    TratarDados.append(dado)
-print('Fim')
-#Separa os valores pelo \t
-teste = []
-for j in TratarDados:
-    valor = j.split('\t')
-    teste.append(valor)
+def tratarDados(dados):
+    #Percorrendo para salvar os dados do arquivo para 
+    TratarDados = []
+    for i in dados:
+        dado = i.rstrip()
+        TratarDados.append(dado)
+    print('Fim')
+    #Separa os valores pelo \t
+    teste = []
+    for j in TratarDados:
+        valor = j.split('\t')
+        teste.append(valor)
 
-#Para pegar os vertices que li do arquivo 
-vertices = []
-#Para pegar as arestas 
-arestas = []
-for i in range(len(teste)):
-    n = teste[i]
-    vertice1 = int(n[0])
-    vertice2 = int(n[1])
-    aresta = (vertice1,vertice2)
-    aresta2 = (vertice2,vertice1)
-    if vertice1 not in vertices:
-        vertices.append(vertice1)
-    if aresta or aresta2 not in arestas:
-        arestas.append(aresta)
-    else:
-        pass
-print(vertices)
-print('ARESTAS')
-print(arestas)
+    #Para pegar os vertices que li do arquivo 
+    vertices = []
+    #Para pegar as arestas 
+    arestas = []
+    for i in range(len(teste)):
+        n = teste[i]
+        vertice1 = int(n[0])
+        vertice2 = int(n[1])
+        aresta = (vertice1,vertice2)
+        aresta2 = (vertice2,vertice1)
+        if vertice1 not in vertices:
+            vertices.append(vertice1)
+        if aresta or aresta2 not in arestas:
+            arestas.append(aresta)
+        else:
+            pass
+    print(vertices)
+    print('ARESTAS')
+    print(arestas)
 
-#Criando a rede
-Rede = nx.Graph()
-Rede.add_nodes_from(vertices)
-Rede.add_edges_from(arestas)
+    #Criando a rede
+    Rede = nx.Graph()
+    Rede.add_nodes_from(vertices)
+    Rede.add_edges_from(arestas)
 
-dados.close()
+    dados.close()
+    return Rede
 
 def PegarGrausDeVertice(grafo): #Função que pega o grau de cada vértice
     graus = []
@@ -59,9 +61,9 @@ def PlotarGraficoDistribuição(grafo): #Essa função está plotando sem transf
     sn.distplot(valorP, hist = False, label= 'Poisson')
     sn.distplot(GrausParaDist, hist= False, label= 'Graus do grafo' )
     plotar.xscale('log')
+    plotar.yscale('log')
+    plotar.ylim(ymin = 10**2, ymax = 10**0 )
     plotar.xlabel('k')
     plotar.ylabel('P(X=k)')
     plotar.legend()
     plotar.show()
-
-PlotarGraficoDistribuição(Rede)

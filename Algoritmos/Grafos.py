@@ -91,7 +91,7 @@ def PlotarGraficoDistribuição(grafo): #Essa função está plotando sem transf
 
 
 # Chamadas de função 
-GrafoUso = CriarGrafo()
+'''GrafoUso = CriarGrafo()
 PlotarGraficoDistribuição(GrafoUso)
 print('Plot de grafo')
 #PoissonPlot(GrafoUso)
@@ -99,7 +99,7 @@ print('Plot de grafo')
 
 
 
-
+'''
 
 
 
