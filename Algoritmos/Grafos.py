@@ -16,10 +16,10 @@ from math import factorial
 
 
 #Função para criar o grafo
-def CriarGrafo():
+def CriarGrafo(N,P):
 
-    N = int(input('Numero de nós: ')) # numero de nós isolados 
-    P = float(input('Probabilidade: ')) #probabilidade de conexão dos vértices 
+    #N = int(input('Numero de nós: ')) # numero de nós isolados 
+    #P = float(input('Probabilidade: ')) #probabilidade de conexão dos vértices 
     Numero_Max = (N*(N-1))/2 #numero max de links 
 
     Lista_de_Nós = []
