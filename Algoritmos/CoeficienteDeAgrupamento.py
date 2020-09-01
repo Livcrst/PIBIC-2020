@@ -60,14 +60,17 @@ for i in clusterings:
     quotienteC.append(auxiliary)
 print('Clustering',quotienteC)
 
-for i in clusterings:
+for i in diameters:
     auxiliary = i/diameterFixed
     quotienteD.append(auxiliary)
 print('Diameters',quotienteD)
 
-sns.distplot(quotienteC)
-sns.distplot(quotienteD)
-#plt.scatter(quotienteC,quotienteD)
-plt.xlim(xmax = 1, xmin = 0)
-plt.ylim(ymax = 1, ymin = 0)
+sns.distplot(quotienteC, hist = False, label='C<p>/C(0)')
+sns.distplot(quotienteD,hist = False, label='D<p>/D(0)')
+
+'''
+plt.plot(quotienteC,quotienteC,'o')
+plt.plot(quotienteD,quotienteD,'o')'''
+plt.xlim(xmax = 1.5, xmin = 0)
+plt.ylim(ymax = 1.5, ymin = 0) 
 plt.show()
