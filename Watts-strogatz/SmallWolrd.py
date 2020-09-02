@@ -32,4 +32,16 @@ for log_exp in np.arange(-40, 1, 1): #Lista de dados
     dataSamples.append(dataTuple)
 
 
-print(dataSamples)
+prob = []
+cluster = []
+average = []
+
+for i in dataSamples:
+    prob.append(i[0])
+    cluster.append(i[1])
+    average.append(i[2])
+
+plt.scatter(cluster,prob, label = 'C(p)/C(0)')
+plt.scatter(average,prob, label = 'L(p)/L(0)') 
+plt.legend()
+plt.show()

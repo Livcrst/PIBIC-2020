@@ -17,8 +17,10 @@ def mean(data):
 #Criar a amostra, adotei tamanho 10 
 vertices = int(input('Digite N: '))
 sample = []
+prob = []
 for i in range(30):
     p = random()
+    prob.append(p)
     graphSample = CriarGrafo(vertices,p)
     sample.append(graphSample)
 #print(sample)
@@ -63,14 +65,9 @@ print('Clustering',quotienteC)
 for i in diameters:
     auxiliary = i/diameterFixed
     quotienteD.append(auxiliary)
-print('Diameters',quotienteD)
+print('Diameters',quotienteD)-
 
-sns.distplot(quotienteC, hist = False, label='C<p>/C(0)')
-sns.distplot(quotienteD,hist = False, label='D<p>/D(0)')
 
-'''
-plt.plot(quotienteC,quotienteC,'o')
-plt.plot(quotienteD,quotienteD,'o')'''
-plt.xlim(xmax = 1.5, xmin = 0)
-plt.ylim(ymax = 1.5, ymin = 0) 
+plt.plot(quotienteC,prob,'o')
+plt.plot(quotienteD,prob,'o')
 plt.show()
