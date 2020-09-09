@@ -15,7 +15,7 @@ def mean(data):
     return Sum
 
 #Criar a amostra, adotei tamanho 10 
-vertices = int(input('Digite N: '))
+vertices = 100
 sample = []
 prob = []
 for i in range(30):
