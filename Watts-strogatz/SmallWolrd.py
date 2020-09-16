@@ -43,41 +43,8 @@ for i in dataSamples:
     average.append(i[2])
 
 
-dataSample = open('D:\PIBIC\Coisa em Python\watts-strogatz-master\plots\output1.csv','r')
-
-TratarDados = []
-for i in dataSample:
-    dado = i.rstrip()
-    TratarDados.append(dado)
-print('Fim')
-print(TratarDados)
-#Separa os valores pelo ,
-
-teste = []
-for j in range(1,len(TratarDados)):
-    valor = TratarDados[j].split(',')
-    print(valor)
-
-    p = float(valor[0])
-    c = float(valor[1])
-    l = float(valor[2])
-    value = (p,c,l)
-    teste.append(value)
-
-print(teste)
-
-probi = []
-clust = []
-averager = []
-
-for i in teste:
-    probi.append(i[0])
-    clust.append(i[1])
-    averager.append(i[2])
-
-
-plt.scatter(probi, clust, label = 'C(p)/C(0)')
-plt.scatter(probi, averager, label = 'L(p)/L(0)') 
+plt.scatter(prob, clustering, label = 'C(p)/C(0)')
+plt.scatter(prob, averager, label = 'L(p)/L(0)') 
 plt.xlabel('Probabilidade')
 plt.legend()
 plt.show()
