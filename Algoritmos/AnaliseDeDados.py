@@ -62,8 +62,12 @@ def PlotarGraficoDistribuição(grafo): #Essa função está plotando sem transf
     sn.distplot(GrausParaDist, hist= False, label= 'Graus do grafo' )
     plotar.xscale('log')
     plotar.yscale('log')
-    plotar.ylim(ymin = 10**2, ymax = 10**0 )
+    plotar.xlim(xmax= 10**2, xmin= 10**0 )
+    plotar.ylim(ymax = 10**0, ymin = 10**-4 )
     plotar.xlabel('k')
     plotar.ylabel('P(X=k)')
     plotar.legend()
     plotar.show()
+
+GrafoUso = tratarDados(dados)
+PlotarGraficoDistribuição(GrafoUso)

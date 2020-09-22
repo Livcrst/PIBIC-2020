@@ -43,8 +43,8 @@ for i in dataSamples:
     average.append(i[2])
 
 
-plt.scatter(prob, clustering, label = 'C(p)/C(0)')
-plt.scatter(prob, averager, label = 'L(p)/L(0)') 
+plt.scatter(prob, cluster, label = 'C(p)/C(0)')
+plt.scatter(prob, average, label = 'L(p)/L(0)') 
 plt.xlabel('Probabilidade')
 plt.legend()
 plt.show()
