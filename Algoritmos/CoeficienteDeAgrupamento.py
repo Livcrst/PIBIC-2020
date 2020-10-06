@@ -65,7 +65,7 @@ print('Clustering',quotienteC)
 for i in diameters:
     auxiliary = i/diameterFixed
     quotienteD.append(auxiliary)
-print('Diameters',quotienteD)-
+print('Diameters',quotienteD)
 
 
 plt.plot(quotienteC,prob,'o')
