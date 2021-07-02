@@ -1,16 +1,12 @@
-#Começar n nós isolados == Done
-#Selecionar um par de nós e gerar randomicamente um numero entre 0 e 1
-#Para cada par de nós 
-#Se o numero excede a probabilidade conecta os dois nós 
-#Lembrando que o numero máximo de vertices é n(n-1)/2
-from random import random,randrange #Para fazer minha seleção aleatória
-import networkx as nx #para criar o grafo
-from scipy.stats import binom # Importe da distribuição binomial 
-from scipy.stats import poisson #import da disttribuição poisson
-import matplotlib.pyplot as plotar #para plotar meus grafos 
+
+from random import random,randrange
+import networkx as nx
+from scipy.stats import binom 
+from scipy.stats import poisson 
+import matplotlib.pyplot as plotar 
 import math
 import numpy as np 
-import seaborn as sn #Para plotar as distribuições
+import seaborn as sn 
 from math import factorial
 #from scipy import binom
 
